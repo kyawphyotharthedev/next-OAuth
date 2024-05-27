@@ -18,23 +18,21 @@ export default function HeaderAuth() {
 
   if (session.data?.user) {
     authContent = (
-      <div className="">
+      <div>
         <DropdownMenu>
           <DropdownMenuTrigger>
             <Avatar>
-              <AvatarImage src={session.data.user.image || ""}/>
+              <AvatarImage src={session.data.user.image || ""} />
             </Avatar>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <div className="flex flex-col p-4 gap-5">
-              <h2 className="font-semibold">
-                {session.data?.user.email}
-              </h2>
+            <div className="p-6">
+              <h2 className="font-semibold mb-3">{session.data?.user.email}</h2>
               <form action={actions.signOut}>
-                <button type="submit" className="border border-red-500 text-red-500 flex items-center gap-2 px-2 py-1 rounded-md">
-                  Sign Out
-                  <LogOutIcon size="20px"/>
-                </button>
+                <Button type="submit" variant="destructive">
+                  Log Out
+                  <LogOutIcon size="15px" className="ml-2" />
+                </Button>
               </form>
             </div>
           </DropdownMenuContent>

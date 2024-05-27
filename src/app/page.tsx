@@ -1,4 +1,5 @@
 "use client";
+import Loading from "@/components/common/loading";
 import Header from "@/components/header";
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
@@ -23,16 +24,18 @@ export default function Home() {
   }
 
   if (status === "loading") {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
     <main>
       <Header />
       <div className=" flex justify-center items-center mt-40">
-        <h1 className=" text-xl text-bold ">
-          Welcome, {session?.user?.name}! You are logged in.
-        </h1>
+        <div className=" p-5">
+          <h1 className=" text-xl text-bold ">
+            Welcome, {session?.user?.name}! You are logged in.
+          </h1>
+        </div>
       </div>
     </main>
   );

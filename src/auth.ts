@@ -42,7 +42,7 @@ export const {
       }
       return session;
     },
-    async redirect({ url, baseUrl }: any) {
+    async redirect({ baseUrl }: any) {
       return baseUrl;
     },
   },

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeaderAuth from "./header-auth";
-import { useSession } from "next-auth/react";
 
 export default function Header() {
   return (
